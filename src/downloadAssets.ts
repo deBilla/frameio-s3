@@ -101,7 +101,7 @@ const downloadAndUploadToS3 = async (url: string, key: string, maxRetries = 3, r
 export const processAsset = async (key: string, assetId: string) => {
   const asset = await getAsset(assetId);
   const downloadUrl = asset.original;
-  console.log(`Downloading ${assetId}, File Size ${asset.filesize}`);
+  console.log(`Downloading ${assetId}, File Size ${asset.filesize}, File Name ${key}`);
   if (downloadUrl) {
     await downloadAndUploadToS3(downloadUrl, key);
   } else {
