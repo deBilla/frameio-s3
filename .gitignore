@@ -5,3 +5,24 @@ err.txt
 out.json
 out.txt
 out*
+
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform variables files
+*.tfvars
+*.tfvars.json
+
+# Terraform configuration directory
+.terraform/
+
+# Terraform plan files
+*.tfplan
+
+# Sensitive data files
+*.pem
+*.key
+*.p12
+*.crt
