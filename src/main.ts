@@ -108,10 +108,10 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 }
 
 async function main() {
-  // // Example usage in your context
+  // Example usage in your context
   // const map = new Map<string, string>();
-  // const teamName = "Barajoun";
-  // const projects = await getProjects('f1cb38df-2f78-4e11-a2af-2f8cb0353d48');
+  // const teamName = "originals";
+  // const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
 
   // for (const project of projects) {
   //     const projectName = project.name;
@@ -126,7 +126,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  for (const media of BARAJOUN) {
+  for (const media of ORIGINALS) {
     await processAsset(media['key'], media['value']);
   }
 
