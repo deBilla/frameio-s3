@@ -10,6 +10,7 @@ import KINOI_2 from './map/kinoi_2.json';
 import ORIGINALS from './map/originals.json';
 import BLUE_MEDIA from './map/blueMedia.json';
 import DESIGN_TEAM from './map/designTeam.json';
+import BARAJOUN from './map/barajoun.json';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -109,8 +110,8 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 async function main() {
   // // Example usage in your context
   // const map = new Map<string, string>();
-  // const teamName = "Design Team";
-  // const projects = await getProjects('7d87b710-2804-4fd6-aec4-4309164a3f7d');
+  // const teamName = "Barajoun";
+  // const projects = await getProjects('f1cb38df-2f78-4e11-a2af-2f8cb0353d48');
 
   // for (const project of projects) {
   //     const projectName = project.name;
@@ -125,7 +126,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  for (const media of KINOI_2) {
+  for (const media of BARAJOUN) {
     await processAsset(media['key'], media['value']);
   }
 
