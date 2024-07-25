@@ -104,7 +104,7 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 async function main() {
   // Example usage in your context
   const map = new Map<string, string>();
-  const projects = await getProjects('32ee3b60-76ff-4bd2-8bb2-cba3663cc0e2');
+  const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
 
   for (const project of projects) {
       const projectName = project.name;
