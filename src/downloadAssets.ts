@@ -43,7 +43,6 @@ const calculatePartSize = (fileSize: number) => {
 };
 
 const downloadAndUploadToS3 = async (url: string, key: string) => {
-  console.log(url);
   try {
     const response = await axios.get(url, {
       responseType: "stream",
@@ -109,7 +108,11 @@ async function main() {
     const asset = await getAsset(assetId);
     const downloadUrl = asset.original;
     console.log(`Downloading ${assetId}, File Size ${asset.filesize}`);
-    await downloadAndUploadToS3(downloadUrl, `${assetId}.mov`);
+    if (downloadUrl) {
+      await downloadAndUploadToS3(downloadUrl, `${assetId}.mov`);
+    } else {
+      console.log('Download url is not available for ', assetId);
+    }
   }
 }
 
