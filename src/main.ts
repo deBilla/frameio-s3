@@ -6,8 +6,10 @@ import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset } from './downloadAssets';
 import KINOI from './map/kinoi.json';
+import KINOI_2 from './map/kinoi_2.json';
 import ORIGINALS from './map/originals.json';
 import BLUE_MEDIA from './map/blueMedia.json';
+import DESIGN_TEAM from './map/designTeam.json';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -107,8 +109,8 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 async function main() {
   // // Example usage in your context
   // const map = new Map<string, string>();
-  // const teamName = "originals";
-  // const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
+  // const teamName = "Design Team";
+  // const projects = await getProjects('7d87b710-2804-4fd6-aec4-4309164a3f7d');
 
   // for (const project of projects) {
   //     const projectName = project.name;
@@ -120,10 +122,10 @@ async function main() {
   //     await findAndFetchNestedAssets(assets, getAllAssets, `${teamName}/${projectName}`, '', map);
   // }
 
-  // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));\
+  // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  for (const media of BLUE_MEDIA) {
+  for (const media of KINOI_2) {
     await processAsset(media['key'], media['value']);
   }
 

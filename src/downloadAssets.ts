@@ -108,3 +108,7 @@ export const processAsset = async (key: string, assetId: string) => {
     console.log('Download url is not available for ', assetId);
   }
 }
+
+// processAsset('Kino i/QURAN PROJECT UHD BATCH 25/102 At-Takaathur_UHD_TEXTED.mov', '53a489d9-8fb1-464b-b13a-efadab059368').then(() => {
+//   console.log('success');
+// })
