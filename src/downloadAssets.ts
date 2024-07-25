@@ -23,7 +23,6 @@ const bucketName = process.env.S3_BUCKET || "";
  * Get a sepcific asset
  */
 async function getAsset(id: string) {
-  console.log(FRAMEIO_TOKEN);
   try {
     const response = await axios.get(`${FRAMEIO_API_URL}/assets/${id}`, {
       headers: {
@@ -44,6 +43,7 @@ const calculatePartSize = (fileSize: number) => {
 };
 
 const downloadAndUploadToS3 = async (url: string, key: string) => {
+  console.log(url);
   try {
     const response = await axios.get(url, {
       responseType: "stream",
