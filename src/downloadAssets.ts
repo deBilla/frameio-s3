@@ -65,7 +65,7 @@ const downloadAndUploadToS3 = async (url: string, key: string) => {
       client: s3Client,
       params: {
         Bucket: bucketName,
-        Key: `shorts/QB_SHORTS/${key}`,
+        Key: `shorts/QB_SHORTS/soureh-short-film-vertical/${key}`,
         Body: response.data,
       },
       partSize,
@@ -84,29 +84,26 @@ const downloadAndUploadToS3 = async (url: string, key: string) => {
 async function main() {
   // const assetId = "356f5106-6295-4311-aaa8-9f663df74b95";
   const assets = [
-  'ac090a6c-2a4d-4dbf-b524-5b2d808859cd',
-    '85177f1b-ed94-45ce-ab40-0472f61c65be',
-    'cf0e295e-44f5-432a-a202-8273fa679e97',
-    '2a9b4810-2275-419d-9bed-c2b2a7d8a7d1',
-    '3fc90378-c00a-4504-a18a-23260b327a6c',
-    'baff664d-22ac-409f-b996-b130cbd6d3dc',
-    'bb966a91-3599-4688-abf4-88b7ea091eaf',
-    '4b8b7fde-e41c-468f-952e-4d862c389e08',
-    '1e79eff1-43ec-4b10-af71-69df82206822',
-    '430c4847-972b-41d9-896d-5ebf33bed42c',
-    '78c80fdf-567b-4343-9788-76fb1549c6fb',
-    '1aea017d-38c8-4b26-9eec-e6c5b0fdf486',
-    '746a0766-89b9-40d3-a495-c9877743c00c',
-    'c6a4e02a-7191-4584-a0c8-bef618c05c0d',
-    '8ad49fad-b57d-43d6-8870-914df419605a',
-    'f4cfd4cb-db7f-44d2-b3c5-b2f22db19217',
-    'f62c46e2-356a-4886-a7ad-c29035c21cf9',
-    'cd32b490-79af-4052-ac0e-c69f8433858a',
-    '5ca67790-3ef8-495b-8653-2c661d4cac35',
-    '9e7be004-af08-415e-9aa5-632f91121f12',
-    '2907a4c7-4005-4122-9b94-1de3417b58b6',
-    'c3e77c57-fac0-4f4f-af8e-8e76740b22d7',
-    '78bfb50c-dd67-4655-8277-0fdaf77bf718'];
+  '84cb0435-7d6f-4c3a-987d-e13193611fd7',
+    '8610be8e-32ca-4280-9f61-8dcfe600cf48',
+    'c8114110-8dbe-492b-a11c-2da47f10712e',
+    '2a83edd1-e721-452f-8feb-516aa3e4b04c',
+    '0119bb94-7bf5-4a99-b3b0-516078891977',
+    '307900a3-a16c-4946-9e7a-8f9656efeefa',
+    '87b24b9f-1653-47e4-b47b-0be6b9e458ec',
+    '20e36fdc-f847-4ae0-95bc-0bbbdf4ba389',
+    '17443429-c1e3-4376-a888-1982a1e50fce',
+    '2457ddaa-9898-4af4-a40c-8c0e6a322721',
+    'f90320d6-dcc0-435f-a375-6d13d9ca3dfb',
+    '52be6464-a992-4d62-9b60-a497201d66c4',
+    '2cbb6fd9-4c4b-4e36-96b7-6bd59515d7ba',
+    '6e1255cf-cf18-40e9-a512-7fc043039e9d',
+    'a0cb3901-f517-4a91-8864-4e36392c0b6d',
+    '0194ed09-21dc-4282-825e-c846ec4aa452',
+    'f4d81276-1057-42e6-81e1-11e4ab92bb0a',
+    '5fcbd772-bf3c-4d6f-879a-ebfa101f011d',
+    '7d26118b-346f-429e-993b-2738b6036e93',
+    '517856ae-3fab-4f06-8d30-f96dc258f731'];
 
 
   for (const assetId of assets) {
