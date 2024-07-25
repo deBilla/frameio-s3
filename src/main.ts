@@ -7,6 +7,7 @@ import axiosRetry from 'axios-retry';
 import { processAsset } from './downloadAssets';
 import KINOI from './map/kinoi.json';
 import ORIGINALS from './map/originals.json';
+import BLUE_MEDIA from './map/blueMedia.json';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -122,7 +123,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));\
 
 
-  for (const media of KINOI) {
+  for (const media of BLUE_MEDIA) {
     await processAsset(media['key'], media['value']);
   }
 
