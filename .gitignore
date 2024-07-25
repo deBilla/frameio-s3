@@ -4,3 +4,4 @@ dist
 err.txt
 out.json
 out.txt
+out*
