@@ -104,6 +104,7 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 async function main() {
   // Example usage in your context
   const map = new Map<string, string>();
+  const teamName = "Kino i";
   const projects = await getProjects('60265c93-6bd7-4938-9a38-fb87e035b7b2');
 
   for (const project of projects) {
@@ -113,7 +114,7 @@ async function main() {
       const assets = await getAllAssets(rootAssetId);
 
       // Use the findAndFetchNestedAssets method
-      await findAndFetchNestedAssets(assets, getAllAssets, projectName, '', map);
+      await findAndFetchNestedAssets(assets, getAllAssets, `${teamName}/${projectName}`, '', map);
   }
 
   for (const [key, id] of map.entries()) {
