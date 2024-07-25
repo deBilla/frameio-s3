@@ -71,7 +71,7 @@ const downloadAndUploadToS3 = async (url: string, key: string, maxRetries = 3, r
         client: s3Client,
         params: {
           Bucket: bucketName,
-          Key: `shorts/soureh/${key}`,
+          Key: `${key}`,
           Body: response.data,
         },
         partSize,
