@@ -103,9 +103,8 @@ export const processAsset = async (key: string, assetId: string) => {
   const downloadUrl = asset.original;
   console.log(`Downloading ${assetId}, File Size ${asset.filesize}`);
   if (downloadUrl) {
-    await downloadAndUploadToS3(downloadUrl, `${assetId}.mov`);
+    await downloadAndUploadToS3(downloadUrl, key);
   } else {
-
     console.log('Download url is not available for ', assetId);
   }
 }
