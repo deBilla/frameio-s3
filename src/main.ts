@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset } from './downloadAssets';
+import KINOI from './map/kinoi.json';
+import ORIGINALS from './map/originals.json';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -102,24 +104,31 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 }
 
 async function main() {
-  // Example usage in your context
-  const map = new Map<string, string>();
-  const teamName = "Originals";
-  const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
+  // // Example usage in your context
+  // const map = new Map<string, string>();
+  // const teamName = "originals";
+  // const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
 
-  for (const project of projects) {
-      const projectName = project.name;
-      const rootAssetId = project.root_asset_id;
+  // for (const project of projects) {
+  //     const projectName = project.name;
+  //     const rootAssetId = project.root_asset_id;
 
-      const assets = await getAllAssets(rootAssetId);
+  //     const assets = await getAllAssets(rootAssetId);
 
-      // Use the findAndFetchNestedAssets method
-      await findAndFetchNestedAssets(assets, getAllAssets, `${teamName}/${projectName}`, '', map);
+  //     // Use the findAndFetchNestedAssets method
+  //     await findAndFetchNestedAssets(assets, getAllAssets, `${teamName}/${projectName}`, '', map);
+  // }
+
+  // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));\
+
+
+  for (const media of ORIGINALS) {
+    await processAsset(media['key'], media['value']);
   }
 
-  for (const [key, id] of map.entries()) {
-    await processAsset(key, id);
-  }
+  // for (const [key, id] of map.entries()) {
+  //   await processAsset(key, id);
+  // }
 }
 
 main().catch(error => {
