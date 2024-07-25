@@ -23,7 +23,7 @@ const bucketName = process.env.S3_BUCKET || "";
  * Get a sepcific asset
  */
 async function getAsset(id: string) {
-  console.log(`${FRAMEIO_API_URL}/assets/${id}`);
+  console.log(FRAMEIO_TOKEN);
   try {
     const response = await axios.get(`${FRAMEIO_API_URL}/assets/${id}`, {
       headers: {
