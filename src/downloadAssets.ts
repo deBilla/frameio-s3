@@ -65,7 +65,7 @@ const downloadAndUploadToS3 = async (url: string, key: string) => {
       client: s3Client,
       params: {
         Bucket: bucketName,
-        Key: `/2/${key}`,
+        Key: `4/${key}`,
         Body: response.data,
       },
       partSize,
