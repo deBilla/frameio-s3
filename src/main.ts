@@ -122,7 +122,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));\
 
 
-  for (const media of ORIGINALS) {
+  for (const media of KINOI) {
     await processAsset(media['key'], media['value']);
   }
 
