@@ -128,16 +128,16 @@ async function main() {
 
 
   const map = new Map<string, string>();
-  for (const media of KINOI_2) {
-    await processAsset(media['key'], media['value']);
-    // const check = await doesFileExist(media['key']);
+  for (const media of ORIGINALS) {
+    // await processAsset(media['key'], media['value']);
+    const check = await doesFileExist(media['key']);
 
-    // if (check) {
-    //   map.set(media['key'], media['value']);
-    // }
+    if (!check) {
+      map.set(media['key'], media['value']);
+    }
   }
 
-  // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
+  console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
   // const csvUtil = new CSVUtil();
   // csvUtil.createCSVFromMap(map, '/Users/dimuthu/bitsmedia/frameio-migration/design_team_report.csv');
 

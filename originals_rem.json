@@ -1,0 +1,4 @@
+
+> frameio-migration@1.0.0 start
+> npx tsc && node dist/main.js -
+
