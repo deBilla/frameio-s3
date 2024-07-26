@@ -1,5 +1,5 @@
 import axios from "axios";
-import { S3Client } from "@aws-sdk/client-s3";
+import { S3Client, HeadObjectCommand } from "@aws-sdk/client-s3";
 import { Upload } from "@aws-sdk/lib-storage";
 import dotenv from "dotenv";
 import ProgressBar from "progress";
@@ -99,6 +99,12 @@ const downloadAndUploadToS3 = async (url: string, key: string, maxRetries = 3, r
 };
 
 export const processAsset = async (key: string, assetId: string) => {
+  const isAlreadyUploaded = await doesFileExist(key);
+
+  if (isAlreadyUploaded) {
+    console.log('File is already uploaded ', key);
+    return;
+  }
   const asset = await getAsset(assetId);
   const downloadUrl = asset.original;
   console.log(`Downloading ${assetId}, File Size ${asset.filesize}, File Name ${key}`);
@@ -109,6 +115,19 @@ export const processAsset = async (key: string, assetId: string) => {
   }
 }
 
-// processAsset('Kino i/QURAN PROJECT UHD BATCH 25/102 At-Takaathur_UHD_TEXTED.mov', '53a489d9-8fb1-464b-b13a-efadab059368').then(() => {
+export const doesFileExist = async (key: string): Promise<boolean> => {
+  try {
+    const command = new HeadObjectCommand({ Bucket: bucketName, Key: key });
+    await s3Client.send(command);
+    return true;
+  } catch (error: any) {
+    if (error.name === "NotFound") {
+      return false;
+    }
+    throw error;
+  }
+}
+
+// processAsset('Blue Media - New Assets folder/New Assets/Never Leave Me/NeverLeaveMe-Promo.mp4', '98812ade-2ab0-4edb-b331-b2aa1c0c1c75').then(() => {
 //   console.log('success');
 // })
