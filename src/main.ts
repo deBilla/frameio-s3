@@ -5,13 +5,12 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI from './map/kinoi.json';
 import KINOI_2 from './map/kinoi_2.json';
-import ORIGINALS from './map/originals.json';
-import BLUE_MEDIA from './map/blue_media.json';
-import DESIGN_TEAM from './map/design_team.json';
-import BARAJOUN from './map/barajoun.json';
-import SHORTS from './map/shorts.json';
+import ORIGINALS from './map/originals_rem.json';
+// import BLUE_MEDIA from './map/blue_media.json';
+// import DESIGN_TEAM from './map/design_team.json';
+/// import BARAJOUN from './map/barajoun.json';
+// import SHORTS from './map/shorts.json';
 import { CSVUtil } from './utils/csvUtil';
 
 // Configure axios to retry requests
@@ -127,17 +126,17 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  const map = new Map<string, string>();
+  // const map = new Map<string, string>();
   for (const media of ORIGINALS) {
-    // await processAsset(media['key'], media['value']);
-    const check = await doesFileExist(media['key']);
+    await processAsset(media['key'], media['value']);
+    // const check = await doesFileExist(media['key']);
 
-    if (!check) {
-      map.set(media['key'], media['value']);
-    }
+    // if (!check) {
+    //   map.set(media['key'], media['value']);
+    // }
   }
 
-  console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
+  // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
   // const csvUtil = new CSVUtil();
   // csvUtil.createCSVFromMap(map, '/Users/dimuthu/bitsmedia/frameio-migration/design_team_report.csv');
 
