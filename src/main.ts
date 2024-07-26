@@ -7,7 +7,7 @@ import axiosRetry from 'axios-retry';
 import { processAsset } from './downloadAssets';
 import KINOI from './map/kinoi.json';
 import KINOI_2 from './map/kinoi_2.json';
-import ORIGINALS from './map/originals_4.json';
+import ORIGINALS from './map/originals_5.json';
 import BLUE_MEDIA from './map/blueMedia.json';
 import DESIGN_TEAM from './map/designTeam.json';
 import BARAJOUN from './map/barajoun.json';
