@@ -11,6 +11,7 @@ import ORIGINALS from './map/originals.json';
 import BLUE_MEDIA from './map/blueMedia.json';
 import DESIGN_TEAM from './map/designTeam.json';
 import BARAJOUN from './map/barajoun.json';
+import SHORTS from './map/shorts.json';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -108,10 +109,10 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 }
 
 async function main() {
-  // Example usage in your context
+  // // Example usage in your context
   // const map = new Map<string, string>();
-  // const teamName = "originals";
-  // const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
+  // const teamName = "QB shorts";
+  // const projects = await getProjects('96483bcc-401f-453b-8bee-39288966c70d');
 
   // for (const project of projects) {
   //     const projectName = project.name;
@@ -126,7 +127,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  for (const media of KINOI_2) {
+  for (const media of SHORTS) {
     await processAsset(media['key'], media['value']);
   }
 
