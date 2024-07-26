@@ -7,7 +7,7 @@ import axiosRetry from 'axios-retry';
 import { processAsset } from './downloadAssets';
 import KINOI from './map/kinoi.json';
 import KINOI_2 from './map/kinoi_2.json';
-import ORIGINALS from './map/originals.json';
+import ORIGINALS from './map/originals_3.json';
 import BLUE_MEDIA from './map/blueMedia.json';
 import DESIGN_TEAM from './map/designTeam.json';
 import BARAJOUN from './map/barajoun.json';
@@ -127,7 +127,7 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  for (const media of SHORTS) {
+  for (const media of ORIGINALS) {
     await processAsset(media['key'], media['value']);
   }
 
