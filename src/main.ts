@@ -6,7 +6,7 @@ import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
 import KINOI_2 from './map/kino_4.json';
-import ORIGINALS from './map/originals_rem3.json';
+import ORIGINALS from './map/originals_rem4.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
 /// import BARAJOUN from './map/barajoun.json';
@@ -127,7 +127,7 @@ async function main() {
 
 
   // const map = new Map<string, string>();
-  for (const media of KINOI_2) {
+  for (const media of ORIGINALS) {
     await processAsset(media['key'], media['value']);
     // const check = await doesFileExist(media['key']);
 
