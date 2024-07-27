@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI_2 from './map/kinoi_3.json';
+import KINOI_2 from './map/kino_4.json';
 import ORIGINALS from './map/originals_rem3.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
