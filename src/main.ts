@@ -5,12 +5,12 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI from './map/kinoi_7.json';
+import KINOI from './map/kinoi_8.json';
 import ORIGINALS from './map/originals_final.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
 /// import BARAJOUN from './map/barajoun.json';
-// import SHORTS from './map/shorts.json';
+import SHORTS from './map/missing_shorts.json';
 import { CSVUtil } from './utils/csvUtil';
 
 // Configure axios to retry requests
