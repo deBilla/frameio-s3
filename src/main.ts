@@ -5,13 +5,14 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI from './map/kinoi_12.json';
+import KINOI from './map/kinoi_t.json';
 import ORIGINALS from './map/originals_mis2.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
 /// import BARAJOUN from './map/barajoun.json';
 import SHORTS from './map/missing_shorts.json';
 import { CSVUtil } from './utils/csvUtil';
+import { processAssetManager } from './downloadAssetsManager';
 
 // Configure axios to retry requests
 axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
@@ -126,9 +127,9 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  const map = new Map<string, any>();
+  // const map = new Map<string, any>();
   for (const media of KINOI) {
-    await processAsset(media['key'], media['value']);
+    await processAssetManager(media['key'], media['value']);
     // const check = await doesFileExist(media['key']);
 
     // // // if (!check) {
