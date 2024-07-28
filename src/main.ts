@@ -6,7 +6,7 @@ import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
 import KINOI from './map/kinoi_9.json';
-import ORIGINALS from './map/originals_final.json';
+import ORIGINALS from './map/originals_mis2.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
 /// import BARAJOUN from './map/barajoun.json';
@@ -110,8 +110,8 @@ projectName: string, folderPath: string, map: Map<string, string>): Promise<void
 
 async function main() {
   // const map = new Map<string, string>();
-  // const teamName = "originals";
-  // const projects = await getProjects('b099f7c7-5459-41b4-b77b-e5d53d099518');
+  // const teamName = "Kino i";
+  // const projects = await getProjects('60265c93-6bd7-4938-9a38-fb87e035b7b2');
 
   // for (const project of projects) {
   //     const projectName = project.name;
@@ -126,14 +126,14 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  // const map = new Map<string, any>();
-  for (const media of KINOI) {
+  const map = new Map<string, any>();
+  for (const media of ORIGINALS) {
     await processAsset(media['key'], media['value']);
     // const check = await doesFileExist(media['key']);
 
-    // // if (!check) {
+    // // // if (!check) {
     //   map.set(media['key'], {assetId: media['value'], exists: check});
-    // // }
+    // // // }
   }
 
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
