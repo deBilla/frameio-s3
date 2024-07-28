@@ -128,6 +128,6 @@ export const doesFileExist = async (key: string): Promise<boolean> => {
   }
 }
 
-// processAsset('Blue Media - New Assets folder/New Assets/Never Leave Me/NeverLeaveMe-Promo.mp4', '98812ade-2ab0-4edb-b331-b2aa1c0c1c75').then(() => {
-//   console.log('success');
-// })
+processAsset('Kino i/QURAN PROJECT UHD BATCH 1/002 Al-Baqarah_UHD_TEXTED.mov', 'd467181f-4fd0-4617-a2f0-58fdbd4e0d94').then(() => {
+  console.log('success');
+})
