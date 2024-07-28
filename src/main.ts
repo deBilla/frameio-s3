@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI from './map/kinoi_9.json';
+import KINOI from './map/kinoi_2.json';
 import ORIGINALS from './map/originals_mis2.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
@@ -127,7 +127,7 @@ async function main() {
 
 
   const map = new Map<string, any>();
-  for (const media of ORIGINALS) {
+  for (const media of KINOI) {
     await processAsset(media['key'], media['value']);
     // const check = await doesFileExist(media['key']);
 
