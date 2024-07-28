@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 import ProgressBar from 'progress';
 import axiosRetry from 'axios-retry';
 import { processAsset, doesFileExist } from './downloadAssets';
-import KINOI from './map/kinoi_6.json';
-import ORIGINALS from './map/originals_rem5.json';
+import KINOI from './map/kinoi_7.json';
+import ORIGINALS from './map/originals_final.json';
 // import BLUE_MEDIA from './map/blue_media.json';
 // import DESIGN_TEAM from './map/design_team.json';
 /// import BARAJOUN from './map/barajoun.json';
@@ -126,19 +126,19 @@ async function main() {
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
 
 
-  // const map = new Map<string, string>();
+  // const map = new Map<string, any>();
   for (const media of KINOI) {
     await processAsset(media['key'], media['value']);
     // const check = await doesFileExist(media['key']);
 
-    // if (!check) {
-    //   map.set(media['key'], media['value']);
-    // }
+    // // if (!check) {
+    //   map.set(media['key'], {assetId: media['value'], exists: check});
+    // // }
   }
 
   // console.log(JSON.stringify(Array.from(map, ([key, value]) => ({ key, value }))));
   // const csvUtil = new CSVUtil();
-  // csvUtil.createCSVFromMap(map, '/Users/dimuthu/bitsmedia/frameio-migration/design_team_report.csv');
+  // csvUtil.createCSVFromMap(map, '/Users/dimuthu/bitsmedia/frameio-migration/original_report.csv');
 
   // for (const [key, id] of map.entries()) {
   //   await processAsset(key, id);

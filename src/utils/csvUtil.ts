@@ -1,10 +1,10 @@
 import { writeFileSync } from 'fs';
 
-export class CSVUtil<T> {
-  public createCSVFromMap(map: Map<string, T>, filePath: string): void {
+export class CSVUtil {
+  public createCSVFromMap(map: Map<string, any>, filePath: string): void {
     // Define CSV headers
-    const headers = 'MediaKey,Exists';
-    const rows = Array.from(map, ([key, value]) => `${key},${value}`).join('\n');
+    const headers = 'MediaKey,AssetID,Exists';
+    const rows = Array.from(map, ([key, value]) => `${key},${value.assetId},${value.exists}`).join('\n');
     const csvContent = `${headers}\n${rows}`;
     writeFileSync(filePath, csvContent);
   }
